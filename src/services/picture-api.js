@@ -9,7 +9,7 @@ export default class FetchPicture {
 
   async fetchArticles() {
     return await fetch(
-      `${BASE_URL}/api/?q=${this.searchQuery}&page=${this.page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
+      `${BASE_URL}/api/?q=${this.searchQuery}&page=${this.page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=200`
     )
       .then(response => {
         if (response.ok) {
@@ -19,12 +19,13 @@ export default class FetchPicture {
       .then(({ hits }) => {
         this.incrementPage();
         if (hits.length === 0) {
-          console.log(
+          alert(
             'Sorry, there are no images matching your search query. Please try again.'
           );
         }
         return { hits };
       })
+      .catch(error => alert("We're sorry, but you've reached the end of search results."))
   }
   incrementPage() {
     this.page = this.page + 1;
