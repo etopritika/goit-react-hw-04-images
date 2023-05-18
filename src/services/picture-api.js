@@ -9,7 +9,7 @@ export default class FetchPicture {
 
   async fetchArticles() {
     return await fetch(
-      `${BASE_URL}/api/?q=${this.searchQuery}&page=${this.page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=200`
+      `${BASE_URL}/api/?q=${this.searchQuery}&page=${this.page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
     )
       .then(response => {
         if (response.ok) {
