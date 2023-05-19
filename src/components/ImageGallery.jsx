@@ -7,7 +7,7 @@ import Loader from './Loader';
 import '../styles/styles.css';
 const api = new FetchPicture();
 
-export const ImageGallery = ({ pictureName, showModal }) => {
+export default function ImageGallery({ pictureName }) {
   const [pictures, setPictures] = useState([]);
   const [error, setError] = useState(null);
   const [status, setStatus] = useState('idle');
@@ -66,7 +66,7 @@ export const ImageGallery = ({ pictureName, showModal }) => {
     return (
       <>
         <ul className="ImageGallery">
-          <ImageGalleryItem pictures={pictures} showModal={showModal} />
+          <ImageGalleryItem pictures={pictures} />
         </ul>
         {loadButton ? (
           <div style={styles}>
@@ -82,5 +82,4 @@ export const ImageGallery = ({ pictureName, showModal }) => {
 
 ImageGallery.propTypes = {
   pictureName: PropTypes.string,
-  showModal: PropTypes.func,
 };

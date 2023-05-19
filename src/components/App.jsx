@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Searchbar } from './Searchbar';
-import { ImageGallery } from './ImageGallery';
+import  ImageGallery  from './ImageGallery';
 import { Modal } from './Modal';
+import { modalContext } from "./context/context";
 import '../styles/styles.css';
 
 export const App = () => {
@@ -22,14 +23,16 @@ export const App = () => {
     }
   };
   return (
+    <modalContext.Provider value={{toggleModal}}>
     <div className="App">
       <Searchbar onSubmit={handleFormSubmit} />
-      <ImageGallery pictureName={pictureName} showModal={toggleModal} />
+      <ImageGallery pictureName={pictureName}/>
       {showModal && (
         <Modal onClose={toggleModal}>
           <img src={largePicture} alt={pictureTag} />
         </Modal>
       )}
     </div>
+    </modalContext.Provider>
   );
 };

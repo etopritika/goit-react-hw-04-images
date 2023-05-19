@@ -1,12 +1,15 @@
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { modalContext } from './context/context';
 import '../styles/styles.css';
 
-export default function ImageGalleryItem({ pictures, showModal }) {
+export default function ImageGalleryItem({ pictures }) {
+  const { toggleModal } = useContext(modalContext);
   return pictures.map(({ id, webformatURL, largeImageURL, tags }) => {
     return (
       <li key={id} className="ImageGalleryItem">
         <img
-          onClick={showModal}
+          onClick={toggleModal}
           className="ImageGalleryItem-image"
           loading="lazy"
           src={webformatURL}
@@ -20,5 +23,5 @@ export default function ImageGalleryItem({ pictures, showModal }) {
 
 ImageGalleryItem.propTypes = {
   pictures: PropTypes.array,
-  showModal: PropTypes.func,
+
 };
