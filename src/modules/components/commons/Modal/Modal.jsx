@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import '../styles/styles.css';
+import './Modal.css';
 
 const modalRoot = document.querySelector('#modal-root');
 

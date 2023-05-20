@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '../styles/styles.css';
+import './Button.css';
 
 export default function LoadMoreButton({ onClick }) {
   return (

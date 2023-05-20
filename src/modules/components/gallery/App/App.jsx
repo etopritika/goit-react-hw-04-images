@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Searchbar } from './Searchbar';
-import  ImageGallery  from './ImageGallery';
-import { Modal } from './Modal';
-import { modalContext } from "./context/context";
-import '../styles/styles.css';
+import { Searchbar } from '../Searchbar/Searchbar';
+import  ImageGallery  from '../ImageGallery/ImageGallery';
+import { Modal } from '../../commons/Modal/Modal';
+import { modalContext } from "../../../context/context";
+import './App.css';
 
 export const App = () => {
   const [pictureName, setPictureName] = useState('');

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ImageGalleryItem from './ImageGalleryItem';
-import FetchPicture from '../services/picture-api';
-import LoadMoreButton from './Button';
-import Loader from './Loader';
-import '../styles/styles.css';
+import FetchPicture from '../../../services/picture-api';
+import LoadMoreButton from '../../commons/Button/Button';
+import Loader from '../../commons/Loader/Loader';
+import './ImageGallery.css';
 const api = new FetchPicture();
 
 export default function ImageGallery({ pictureName }) {

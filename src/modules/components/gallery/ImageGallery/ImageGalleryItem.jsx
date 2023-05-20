@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { modalContext } from './context/context';
-import '../styles/styles.css';
+import { modalContext } from '../../../context/context';
+import './ImageGallery.css';
 
 export default function ImageGalleryItem({ pictures }) {
   const { toggleModal } = useContext(modalContext);

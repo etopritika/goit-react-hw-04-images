@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/styles.css';
+import './Searchbar.css';
 
 export const Searchbar = ({ onSubmit }) => {
   const [pictureName, setPictureName] = useState('');
